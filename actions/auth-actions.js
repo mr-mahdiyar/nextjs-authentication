@@ -35,7 +35,7 @@ export async function signup(mode, prevState, formData) {
   }
 }
 
-export async function login(mode, prevState, formData) {
+export async function login(prevState, formData) {
   const email = formData.get("email");
   const password = formData.get("password");
 
@@ -58,7 +58,7 @@ export async function login(mode, prevState, formData) {
       },
     };
   }
-  await createAuthSession(id);
+  await createAuthSession(existingUser.id);
   redirect("/training");
 }
 
