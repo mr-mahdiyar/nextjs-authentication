@@ -1,8 +1,9 @@
-import '../globals.css';
+import { loguot } from "@/actions/auth-actions";
+import "../globals.css";
 
 export const metadata = {
-  title: 'Next Auth',
-  description: 'Next.js Authentication',
+  title: "Next Auth",
+  description: "Next.js Authentication",
 };
 
 export default function AuthRootLayout({ children }) {
@@ -10,7 +11,7 @@ export default function AuthRootLayout({ children }) {
     <>
       <header id="auth-header">
         <p>Welcome back!</p>
-        <form>
+        <form action={loguot}>
           <button>Logout</button>
         </form>
       </header>
